@@ -129,8 +129,13 @@ class _NewExpenseState extends State<NewExpense> {
           ),
           SizedBox(height: 16),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            
             children: [
               DropdownButton(
+                style: TextStyle(color: Colors.black),
+                icon: Icon(Icons.arrow_drop_down),
+                iconSize: 24,
                 value: _selectedCategory,
                 items: Category.values
                     .map(

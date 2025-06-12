@@ -92,7 +92,6 @@ class _ExpensesState extends State<Expenses> {
           IconButton(onPressed: _openAddExpenseOverlay, icon: Icon(Icons.add)),
         ],
         title: Text("Expenses Tracker"),
-        backgroundColor: Colors.amber,
       ),
       body: Column(
         children: [
