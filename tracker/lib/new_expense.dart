@@ -38,11 +38,13 @@ class _NewExpenseState extends State<NewExpense> {
   }
 
   void _submitData() {
+    print("Submit Data");
     final enteredAmnt = double.tryParse(_amntController.text);
     final amountIsInvalid = enteredAmnt == null || enteredAmnt <= 0;
     if (_titleController.text.trim().isEmpty ||
         amountIsInvalid ||
         _selectedDate == null) {
+
       showDialog(
         context: context,
         builder: (ctx) => AlertDialog(
@@ -81,7 +83,7 @@ class _NewExpenseState extends State<NewExpense> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.fromLTRB(16,48,16,16),
+      padding: EdgeInsets.fromLTRB(16, 48, 16, 16),
       child: Column(
         children: [
           TextField(

@@ -44,6 +44,7 @@ class _ExpensesState extends State<Expenses> {
 
   void _addExpenses(Expense expense) {
     setState(() {
+      print("New Expense Added");
       _regesterExpenses.add(expense);
     });
   }
@@ -54,13 +55,14 @@ class _ExpensesState extends State<Expenses> {
       _regesterExpenses.remove(expense);
     });
 
-    ScaffoldMessenger.of(context).clearSnackBars();
+    // ScaffoldMessenger.of(context).clearSnackBars();
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         duration: Duration(seconds: 3),
         action: SnackBarAction(
           label: 'undo',
           onPressed: () {
+            print("undo pressed");
             setState(() {
               _regesterExpenses.insert(expenseIndex, expense);
             });
@@ -78,7 +80,7 @@ class _ExpensesState extends State<Expenses> {
     );
 
     if (_regesterExpenses.isNotEmpty) {
-      ExpensesList(
+     mainContent= ExpensesList(
         expenses: _regesterExpenses,
         onRemoveExpense: _removeExpenses,
       );
