@@ -117,6 +117,7 @@ class _NewExpenseState extends State<NewExpense> {
                       _selectedDate == null
                           ? "No Date Selected"
                           : formatter.format(_selectedDate!),
+                       style: TextStyle(fontSize: 14,color: Colors.black),   
                     ),
                     IconButton(
                       onPressed: _presentDatePicker,

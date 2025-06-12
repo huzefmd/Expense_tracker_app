@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tracker/expenses_list.dart';
 import 'package:tracker/models/expense.dart';
 import 'package:tracker/new_expense.dart';
+import 'package:tracker/chart/chart.dart';
 
 class Expenses extends StatefulWidget {
   const Expenses({super.key});
@@ -80,7 +81,7 @@ class _ExpensesState extends State<Expenses> {
     );
 
     if (_regesterExpenses.isNotEmpty) {
-     mainContent= ExpensesList(
+      mainContent = ExpensesList(
         expenses: _regesterExpenses,
         onRemoveExpense: _removeExpenses,
       );
@@ -95,7 +96,7 @@ class _ExpensesState extends State<Expenses> {
       ),
       body: Column(
         children: [
-          Text("Expenses Tracker"),
+          Chart(expenses: _regesterExpenses),
           Expanded(child: mainContent),
         ],
       ),
